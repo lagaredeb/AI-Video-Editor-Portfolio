@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dave M. Lagare, AI Video Editor</title>
+<meta name="description" content="AI video editor for brands and creators: AI-generated ads, UGC-style videos, AI avatars and short-form content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="logo" href="#home" aria-label="Outlast Creatives home">
+      <!-- Logo file: image/outlast.png (also tries .jpg, .jpeg, .svg, .webp, and the icon folder) -->
+      <img class="logo__img" src="image/outlast.png" alt="" data-alt="image/outlast.jpg|image/outlast.jpeg|image/outlast.svg|image/outlast.webp|icon/outlast.png|icon/outlast.jpg|icon/outlast.svg|outlast.png|outlast.jpg|outlast.svg" onerror="var a=(this.dataset.alt||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.alt=a.join('|');}else{this.remove();}">
+      <span class="logo__text">Outlast Creatives</span>
+    </a>
+    <nav class="nav__links" id="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a class="btn btn--ghost nav__cta" href="#contact">Contact</a>
+    </nav>
+    <button class="nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="wrap hero__in">
+    <div class="hero__text">
+      <p class="hero__hello">Hello, I'm Dave M. Lagare</p>
+      <h1 class="hero__role">A Creative <span class="red" id="typed">AI Video Editor</span><span class="caret" aria-hidden="true"></span></h1>
+      <p class="hero__lede">I combine AI video generation with real editing skills to make ads, product videos and short-form content faster and at a lower cost than a full shoot.</p>
+      <div class="hero__btns">
+        <a class="btn btn--red" href="#contact">Hire Me
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#portfolio">
+          <svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> View My Work</a>
+      </div>
+    </div>
+
+    <div class="hero__pic">
+      <div class="ring">
+        <!-- Hero photo: image/profile1.png -->
+        <img class="avatar avatar--photo" src="image/profile1.png" alt="Dave M. Lagare" onerror="this.style.visibility='hidden'">
+      </div>
+      <!-- Tool logos (icon only). Files are in the "icon" folder.
+           If a file is not found, the tool name shows instead. -->
+      <span class="badge b1" title="Claude"><img src="icon/claude.svg" alt="Claude" data-alt="icon/claude.png" onerror="var a=(this.dataset.alt||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.alt=a.join('|');}else{this.parentNode.classList.add('no-logo');this.remove();}"></span>
+      <span class="badge b2" title="Higgsfield"><img src="icon/higgsfield.svg" alt="Higgsfield" data-alt="icon/higgsfield.png" onerror="var a=(this.dataset.alt||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.alt=a.join('|');}else{this.parentNode.classList.add('no-logo');this.remove();}"></span>
+      <span class="badge b3" title="ElevenLabs"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='6' y='3' width='4' height='18' rx='1' fill='%23000'/%3E%3Crect x='14' y='3' width='4' height='18' rx='1' fill='%23000'/%3E%3C/svg%3E" alt="ElevenLabs" data-alt="" onerror="var a=(this.dataset.alt||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.alt=a.join('|');}else{this.parentNode.classList.add('no-logo');this.remove();}"></span>
+      <span class="badge b4" title="HeyGen"><img src="icon/heygen.png" alt="HeyGen" data-alt="icon/heygen.svg" onerror="var a=(this.dataset.alt||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.alt=a.join('|');}else{this.parentNode.classList.add('no-logo');this.remove();}"></span>
+      <span class="badge b5" title="CapCut"><img src="icon/capcut.svg" alt="CapCut" data-alt="icon/capcut.png" onerror="var a=(this.dataset.alt||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.alt=a.join('|');}else{this.parentNode.classList.add('no-logo');this.remove();}"></span>
+      <span class="badge b6" title="ChatGPT"><img src="icon/chatgpt.svg" alt="ChatGPT" data-alt="icon/chatgpt.png" onerror="var a=(this.dataset.alt||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.alt=a.join('|');}else{this.parentNode.classList.add('no-logo');this.remove();}"></span>
+      <span class="badge b7" title="Suno"><img src="icon/suno.jpg" alt="Suno" data-alt="icon/suno.jpeg|icon/suno.png|icon/suno.svg" onerror="var a=(this.dataset.alt||'').split('|').filter(Boolean);if(a.length){this.src=a.shift();this.dataset.alt=a.join('|');}else{this.parentNode.classList.add('no-logo');this.remove();}"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section about" id="about">
+  <div class="wrap about__in">
+    <div class="about__pic reveal">
+      <!-- About photo: image/profile2.png -->
+      <img class="avatar avatar--photo" src="image/profile2.png" alt="Dave M. Lagare at work" onerror="this.style.visibility='hidden'">
+    </div>
+    <div class="about__text reveal">
+      <h2 class="kicker">About Me</h2>
+      <p>I'm an AI video editor from the Philippines. I write the script, generate the scenes and characters with AI tools, then edit everything together in Premiere Pro so it looks like one finished video, not a pile of AI clips.</p>
+      <p>Brands use me to test more ad ideas without booking actors, studios or reshoots. I keep characters consistent from scene to scene, fix the small AI glitches by hand, and deliver ready-to-post files in every size you need.</p>
+      <h3 class="sub">Skills &amp; Software</h3>
+      <ul class="chips">
+        <li>Claude</li><li>ChatGPT</li><li>Suno</li><li>Kling AI</li><li>Higgsfield</li><li>Runway</li><li>Google Veo</li>
+        <li>Midjourney</li><li>ChatGPT Image</li><li>ElevenLabs</li><li>HeyGen</li>
+        <li>Adobe Premiere Pro</li><li>After Effects</li><li>CapCut</li><li>Prompt Writing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="kicker">Services</p>
+      <h2>What I Do for Clients</h2>
+    </header>
+    <div class="cards">
+      <article class="card reveal">
+        <span class="card__ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span>
+        <h3>AI Video Ads</h3>
+        <p>Product and brand ads built from AI-generated scenes, edited with hooks, captions and a clear call to action.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card__ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z"/></svg></span>
+        <h3>AI Characters &amp; UGC</h3>
+        <p>Consistent AI characters and UGC-style videos, from character sheets to talking scenes with lip-sync.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card__ic"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+        <h3>AI Voice &amp; Avatars</h3>
+        <p>Natural AI voiceovers, AI avatar presenters, music and sound effects, with captions checked by hand.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card__ic"><svg viewBox="0 0 24 24"><path d="M4 20l6-6M14 4l6 6-8 8-6-6z"/></svg></span>
+        <h3>Script to Final Edit</h3>
+        <p>Script, scene breakdown, prompts, generation and final edit. You give the idea, I deliver the video.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section class="section" id="portfolio">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="kicker">Latest Portfolio</p>
+      <h2>AI videos by style</h2>
+    </header>
+    <div class="filters" role="tablist" aria-label="Filter work">
+      <button class="filter is-on" type="button" data-f="all">All</button>
+      <button class="filter" type="button" data-f="claymation">Claymation</button>
+      <button class="filter" type="button" data-f="lego">Lego</button>
+      <button class="filter" type="button" data-f="pixar">Pixar Animation</button>
+      <button class="filter" type="button" data-f="realistic">Realistic Ads</button>
+      <button class="filter" type="button" data-f="singing">Singing Ads</button>
+    </div>
+    <!-- HOW TO ADD YOUR VIDEOS
+         Paste each video's own link in data-src="" (not the folder link).
+         Google Drive: open the video's folder, right-click the video,
+         Share > Copy link, then paste it here. Sharing must be
+         "Anyone with the link".
+         Also works: YouTube links, or your own file like "video/ad1.mp4".
+         Vertical video (Reels/TikTok)? add data-ratio="9:16".
+         The aria-label is read out by screen readers (not shown). -->
+    <div class="grid">
+      <a class="work" href="#" aria-label="Play Claymation Ad" data-cat="claymation" data-src="https://drive.google.com/file/d/1s62Z7mvwquiXvtKcQ0IawGcyiO_63ykg/view?usp=drive_link"><span class="thumb t1"></span></a>
+      <a class="work" href="#" aria-label="Play Lego Ad" data-cat="lego" data-src="https://drive.google.com/file/d/1eu29cqQ8TshOxu22AApUpilNbLQtRJKG/view?usp=drive_link"><span class="thumb t2"></span></a>
+      <a class="work" href="#" aria-label="Play Pixar-Style Ad 1" data-cat="pixar" data-src="https://drive.google.com/file/d/1Czw8Uf4A8dZuw3UiiGrU0hbcwbL1lLM3/view?usp=drive_link"><span class="thumb t3"></span></a>
+      <a class="work" href="#" aria-label="Play Pixar-Style Ad 2" data-cat="pixar" data-src="https://drive.google.com/file/d/11-y-mpuvfUCflwUZHi3-qLne2of80kRu/view?usp=drive_link"><span class="thumb t4"></span></a>
+      <a class="work" href="#" aria-label="Play Pixar-Style Ad 3" data-cat="pixar" data-src="https://drive.google.com/file/d/12z9S_q4WWsdLyvbz2EJkcLO4nsxvlc05/view?usp=drive_link"><span class="thumb t5"></span></a>
+      <a class="work" href="#" aria-label="Play Pixar-Style Ad 4" data-cat="pixar" data-src="https://drive.google.com/file/d/1GIMpuX_YZmLIseUc1lABc2n1K6eHCGWj/view?usp=drive_link"><span class="thumb t6"></span></a>
+      <a class="work" href="#" aria-label="Play Pixar-Style Ad 5" data-cat="pixar" data-src="https://drive.google.com/file/d/1A3UJ-TKxv1fso3zILg_-aGALAYu4tMI-/view?usp=drive_link"><span class="thumb t1"></span></a>
+      <a class="work" href="#" aria-label="Play Pixar-Style Ad 6" data-cat="pixar" data-src="https://drive.google.com/file/d/14ppj2E1PtoVxH-16TSrNkvvv94LYPwBc/view?usp=drive_link"><span class="thumb t2"></span></a>
+      <a class="work" href="#" aria-label="Play Realistic AI Ad" data-cat="realistic" data-src="https://drive.google.com/file/d/1gM5kPIkf5vY8yypsDrRNt4pf6wVp5bHN/view?usp=drive_link"><span class="thumb t3"></span></a>
+      <a class="work" href="#" aria-label="Play Singing Ad 1" data-cat="singing" data-src="https://drive.google.com/file/d/1cWIS1-m3yu0nkc1Z3OQhHx3KA3fztxYP/view?usp=drive_link"><span class="thumb t4"></span></a>
+      <a class="work" href="#" aria-label="Play Singing Ad 2" data-cat="singing" data-src="https://drive.google.com/file/d/1qEiAYu-Trm6MejhSEdNjGAmbVLyt6sTl/view?usp=drive_link"><span class="thumb t5"></span></a>
+      <a class="work" href="#" aria-label="Play Singing Ad 3" data-cat="singing" data-src="https://drive.google.com/file/d/1EfvLq3rhP_U1ipTm9z62JFVoIRrb91b6/view?usp=drive_link"><span class="thumb t6"></span></a>
+      <a class="work" href="#" aria-label="Play Singing Ad 4" data-cat="singing" data-src="https://drive.google.com/file/d/1-tmnlgtXE7_GQ1NrQ8IVZeShLJbE4-K_/view?usp=drive_link"><span class="thumb t1"></span></a>
+    </div>
+    <p class="more"><a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1ldm4JfX_kH5XaAkEZf39TzLpc1RkccrW" target="_blank" rel="noopener">View full portfolio on Google Drive</a></p>
+  </div>
+</section>
+
+<!-- ================= CLIENTS ================= -->
+<section class="section" id="clients">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="kicker">Happy Clients</p>
+      <h2>Numbers so far</h2>
+    </header>
+    <!-- Sample numbers. Change them to your real ones. -->
+    <div class="stats">
+      <div class="stat reveal"><b data-count="3">0</b><span>Years editing</span></div>
+      <div class="stat reveal"><b data-count="250" data-suffix="+">0</b><span>AI videos delivered</span></div>
+      <div class="stat reveal"><b data-count="40" data-suffix="+">0</b><span>Clients</span></div>
+      <div class="stat reveal"><b data-count="72" data-suffix="h">0</b><span>Average turnaround</span></div>
+    </div>
+
+    <div class="quotes">
+      <figure class="quote reveal">
+        <blockquote>"We tested five ad ideas in one week without a single shoot. Dave kept the same character in every scene, and two of the ads are still running."</blockquote>
+        <figcaption><b>Sample Client</b> · Skincare brand</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote>"The AI spokesperson videos sound natural and the edits are clean. Our customers did not notice it was AI until we told them."</blockquote>
+        <figcaption><b>Sample Client</b> · Online course creator</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact" id="contact">
+  <div class="wrap contact__in reveal">
+    <p class="kicker">Contact</p>
+    <h2>Let's create your next AI video</h2>
+    <p class="contact__lede">Tell me your product and your idea. I'll make a short free sample scene, so you can see the quality before you hire me.</p>
+    <div class="mail">
+      <code id="email">davelagare8@gmail.com</code>
+      <button class="btn btn--red" id="copy" type="button">Copy Email</button>
+    </div>
+    <p class="socials">
+      <a href="https://www.onlinejobs.ph/" target="_blank" rel="noopener">OnlineJobs.ph</a>
+      <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot"><div class="wrap">© <span id="year"></span> Dave M. Lagare · AI Video Editor</div></footer>
+
+<!-- Video player popup -->
+<div class="player" id="player" hidden>
+  <div class="player__box" id="player-box" role="dialog" aria-modal="true" aria-label="Video player"></div>
+  <button class="player__close" id="player-close" type="button" aria-label="Close video">&times;</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
