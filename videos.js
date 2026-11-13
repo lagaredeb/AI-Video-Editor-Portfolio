@@ -34,6 +34,8 @@ var VIDEOS = [
 
   // ----- REALISTIC ADS -----
   { style: "realistic", vertical: false, link: "https://drive.google.com/file/d/1gM5kPIkf5vY8yypsDrRNt4pf6wVp5bHN/view?usp=drive_link" },
+{ style: "realistic", vertical: false, link: "https://drive.google.com/file/d/1hNTbcn7mBM2iokxFnAhADxxHmSG56uL3/view?usp=drive_link" },
+  
 
   // ----- SINGING ADS -----
   { style: "singing", vertical: false, link: "https://drive.google.com/file/d/1cWIS1-m3yu0nkc1Z3OQhHx3KA3fztxYP/view?usp=drive_link" },
