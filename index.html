@@ -77,8 +77,7 @@
     </div>
     <div class="about__text reveal">
       <h2 class="kicker">About Me</h2>
-      <p>I'm an AI video editor from the Philippines. I write the script, generate the scenes and characters with AI tools, then edit everything together in Premiere Pro so it looks like one finished video, not a pile of AI clips.</p>
-      <p>Brands use me to test more ad ideas without booking actors, studios or reshoots. I keep characters consistent from scene to scene, fix the small AI glitches by hand, and deliver ready-to-post files in every size you need.</p>
+      <p>I'm an AI Video Editor from the Philippines with 2 years of experience creating short-form content and AI-powered advertisements. I use AI tools to generate scripts, scenes, characters, and voiceovers, then edit everything into polished, engaging videos for brands.</p>
       <h3 class="sub">Skills &amp; Software</h3>
       <ul class="chips">
         <li>Claude</li><li>ChatGPT</li><li>Suno</li><li>Kling AI</li><li>Higgsfield</li><li>Runway</li><li>Google Veo</li>
@@ -136,29 +135,8 @@
       <button class="filter" type="button" data-f="realistic">Realistic Ads</button>
       <button class="filter" type="button" data-f="singing">Singing Ads</button>
     </div>
-    <!-- HOW TO ADD YOUR VIDEOS
-         Paste each video's own link in data-src="" (not the folder link).
-         Google Drive: open the video's folder, right-click the video,
-         Share > Copy link, then paste it here. Sharing must be
-         "Anyone with the link".
-         Also works: YouTube links, or your own file like "video/ad1.mp4".
-         Vertical video (Reels/TikTok)? add data-ratio="9:16".
-         The aria-label is read out by screen readers (not shown). -->
-    <div class="grid">
-      <a class="work" href="#" aria-label="Play Claymation Ad" data-cat="claymation" data-src="https://drive.google.com/file/d/1s62Z7mvwquiXvtKcQ0IawGcyiO_63ykg/view?usp=drive_link"><span class="thumb t1"></span></a>
-      <a class="work" href="#" aria-label="Play Lego Ad" data-cat="lego" data-src="https://drive.google.com/file/d/1eu29cqQ8TshOxu22AApUpilNbLQtRJKG/view?usp=drive_link"><span class="thumb t2"></span></a>
-      <a class="work" href="#" aria-label="Play Pixar-Style Ad 1" data-cat="pixar" data-src="https://drive.google.com/file/d/1Czw8Uf4A8dZuw3UiiGrU0hbcwbL1lLM3/view?usp=drive_link"><span class="thumb t3"></span></a>
-      <a class="work" href="#" aria-label="Play Pixar-Style Ad 2" data-cat="pixar" data-src="https://drive.google.com/file/d/11-y-mpuvfUCflwUZHi3-qLne2of80kRu/view?usp=drive_link"><span class="thumb t4"></span></a>
-      <a class="work" href="#" aria-label="Play Pixar-Style Ad 3" data-cat="pixar" data-src="https://drive.google.com/file/d/12z9S_q4WWsdLyvbz2EJkcLO4nsxvlc05/view?usp=drive_link"><span class="thumb t5"></span></a>
-      <a class="work" href="#" aria-label="Play Pixar-Style Ad 4" data-cat="pixar" data-src="https://drive.google.com/file/d/1GIMpuX_YZmLIseUc1lABc2n1K6eHCGWj/view?usp=drive_link"><span class="thumb t6"></span></a>
-      <a class="work" href="#" aria-label="Play Pixar-Style Ad 5" data-cat="pixar" data-src="https://drive.google.com/file/d/1A3UJ-TKxv1fso3zILg_-aGALAYu4tMI-/view?usp=drive_link"><span class="thumb t1"></span></a>
-      <a class="work" href="#" aria-label="Play Pixar-Style Ad 6" data-cat="pixar" data-src="https://drive.google.com/file/d/14ppj2E1PtoVxH-16TSrNkvvv94LYPwBc/view?usp=drive_link"><span class="thumb t2"></span></a>
-      <a class="work" href="#" aria-label="Play Realistic AI Ad" data-cat="realistic" data-src="https://drive.google.com/file/d/1gM5kPIkf5vY8yypsDrRNt4pf6wVp5bHN/view?usp=drive_link"><span class="thumb t3"></span></a>
-      <a class="work" href="#" aria-label="Play Singing Ad 1" data-cat="singing" data-src="https://drive.google.com/file/d/1cWIS1-m3yu0nkc1Z3OQhHx3KA3fztxYP/view?usp=drive_link"><span class="thumb t4"></span></a>
-      <a class="work" href="#" aria-label="Play Singing Ad 2" data-cat="singing" data-src="https://drive.google.com/file/d/1qEiAYu-Trm6MejhSEdNjGAmbVLyt6sTl/view?usp=drive_link"><span class="thumb t5"></span></a>
-      <a class="work" href="#" aria-label="Play Singing Ad 3" data-cat="singing" data-src="https://drive.google.com/file/d/1EfvLq3rhP_U1ipTm9z62JFVoIRrb91b6/view?usp=drive_link"><span class="thumb t6"></span></a>
-      <a class="work" href="#" aria-label="Play Singing Ad 4" data-cat="singing" data-src="https://drive.google.com/file/d/1-tmnlgtXE7_GQ1NrQ8IVZeShLJbE4-K_/view?usp=drive_link"><span class="thumb t1"></span></a>
-    </div>
+    <!-- The videos are listed in videos.js. Edit that file to add or remove videos. -->
+    <div class="grid"></div>
     <p class="more"><a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1ldm4JfX_kH5XaAkEZf39TzLpc1RkccrW" target="_blank" rel="noopener">View full portfolio on Google Drive</a></p>
   </div>
 </section>
@@ -176,17 +154,6 @@
       <div class="stat reveal"><b data-count="250" data-suffix="+">0</b><span>AI videos delivered</span></div>
       <div class="stat reveal"><b data-count="40" data-suffix="+">0</b><span>Clients</span></div>
       <div class="stat reveal"><b data-count="72" data-suffix="h">0</b><span>Average turnaround</span></div>
-    </div>
-
-    <div class="quotes">
-      <figure class="quote reveal">
-        <blockquote>"We tested five ad ideas in one week without a single shoot. Dave kept the same character in every scene, and two of the ads are still running."</blockquote>
-        <figcaption><b>Sample Client</b> · Skincare brand</figcaption>
-      </figure>
-      <figure class="quote reveal">
-        <blockquote>"The AI spokesperson videos sound natural and the edits are clean. Our customers did not notice it was AI until we told them."</blockquote>
-        <figcaption><b>Sample Client</b> · Online course creator</figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -220,6 +187,7 @@
   <button class="player__close" id="player-close" type="button" aria-label="Close video">&times;</button>
 </div>
 
+<script src="videos.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

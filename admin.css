@@ -1,0 +1,58 @@
+/* Video Manager (admin.html). Uses the colours from style.css. */
+[hidden] { display: none !important; }
+body.admin { background: var(--bg); }
+.ad-top { border-bottom: 1px solid var(--line); background: var(--bg-2); }
+.ad-top__in { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 24px; flex-wrap: wrap; }
+.ad-top h1 { font-size: 26px; font-weight: 700; }
+.ad-muted { color: var(--muted); font-size: 14px; }
+.ad-main { display: grid; gap: 24px; padding-block: 32px 64px; }
+.ad-panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: grid; gap: 14px; }
+.ad-panel > *, .ad-list > *, .ad-item > * { min-width: 0; }
+.ad-panel h2 { font-size: 18px; font-weight: 600; }
+.ad-panel code { background: #222226; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+.ad-how ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
+.ad-how b { color: var(--text); }
+.ad-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.ad-field { display: grid; gap: 6px; font-size: 13px; color: var(--muted); min-width: 0; }
+.ad-field input, .ad-field select {
+  min-height: 44px; padding: 0 12px; width: 100%;
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; font: 15px var(--font);
+}
+.ad-field input:focus, .ad-field select:focus { outline: 2px solid var(--red); outline-offset: 1px; border-color: transparent; }
+.ad-form { display: grid; grid-template-columns: 2fr 1fr 1.4fr auto auto; gap: 12px; align-items: end; }
+.ad-check { display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; white-space: nowrap; cursor: pointer; }
+.ad-check input { width: 18px; height: 18px; accent-color: var(--red); }
+.ad-status { font-size: 14px; color: var(--muted); min-height: 1.2em; }
+.ad-status.is-ok { color: #5fd38d; }
+.ad-status.is-err { color: #ff7b76; }
+.ad-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.ad-count { display: inline-grid; place-items: center; min-width: 28px; height: 24px; padding: 0 8px; border-radius: 999px; background: var(--red); color: #fff; font-size: 13px; margin-left: 6px; vertical-align: 2px; }
+.ad-dirty { box-shadow: 0 0 0 3px rgba(229,50,45,.35); }
+
+.ad-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.ad-item {
+  display: grid; grid-template-columns: 112px minmax(0, 1fr) 150px auto auto; gap: 14px; align-items: center;
+  padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg-2);
+}
+.ad-thumb { width: 112px; aspect-ratio: 16 / 10; border-radius: 8px; background: #222 center / cover no-repeat; display: block; }
+.ad-info { display: grid; gap: 6px; }
+.ad-info input { width: 100%; min-width: 0; min-height: 36px; padding: 0 10px; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px; font: 14px var(--font); }
+.ad-link { font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ad-item select { width: 100%; min-height: 36px; padding: 0 8px; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px; font: 14px var(--font); }
+.ad-btns { display: flex; gap: 6px; }
+.ad-icon { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--text); cursor: pointer; font-size: 16px; line-height: 1; }
+.ad-icon:hover { border-color: var(--red); }
+.ad-icon:disabled { opacity: .35; cursor: default; }
+.ad-del { color: #ff7b76; }
+.ad-del:hover { background: var(--red); color: #fff; }
+.ad-empty { color: var(--muted); font-size: 14px; padding: 18px; text-align: center; border: 1px dashed var(--line); border-radius: 10px; }
+
+@media (max-width: 860px) {
+  .ad-form { grid-template-columns: 1fr 1fr; }
+  .ad-wide { grid-column: 1 / -1; }
+  .ad-item { grid-template-columns: 96px minmax(0, 1fr); }
+  .ad-thumb { width: 96px; }
+  .ad-item select, .ad-item .ad-check, .ad-item .ad-btns { grid-column: 2; }
+}
+@media (max-width: 520px) { .ad-form { grid-template-columns: 1fr; } }

@@ -43,15 +43,18 @@
 
   /* ----- Portfolio filters ----- */
   var filters = document.querySelectorAll(".filter");
-  var works = document.querySelectorAll(".work");
+  var activeFilter = "all";
+  function applyFilter() {
+    document.querySelectorAll(".work").forEach(function (work) {
+      work.classList.toggle("is-hidden", activeFilter !== "all" && work.getAttribute("data-cat") !== activeFilter);
+    });
+  }
   filters.forEach(function (btn) {
     btn.addEventListener("click", function () {
       filters.forEach(function (b) { b.classList.remove("is-on"); });
       btn.classList.add("is-on");
-      var f = btn.getAttribute("data-f");
-      works.forEach(function (work) {
-        work.classList.toggle("is-hidden", f !== "all" && work.getAttribute("data-cat") !== f);
-      });
+      activeFilter = btn.getAttribute("data-f");
+      applyFilter();
     });
   });
 
@@ -161,33 +164,91 @@
   player.addEventListener("click", function (e) { if (e.target === player) closePlayer(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !player.hidden) closePlayer(); });
 
-  document.querySelectorAll(".work[data-src]").forEach(function (card) {
+  /* names for the style tag on each card, taken from the filter buttons */
+  var styleNames = {};
+  document.querySelectorAll(".filter[data-f]").forEach(function (b) { styleNames[b.getAttribute("data-f")] = b.textContent.trim(); });
+  /* plays card previews only while they are on screen */
+  var previewIO = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      var pv = en.target._preview; if (!pv) return;
+      if (en.isIntersecting) pv.start(); else pv.stop();
+    });
+  }, { rootMargin: "100px 0px" }) : null;
+
+  function setupCard(card, n) {
     var src = (card.getAttribute("data-src") || "").trim();
     if (!src) return;                      /* no video yet: card stays as is */
     var tall = card.getAttribute("data-ratio") === "9:16";
     var thumb = card.querySelector("span.thumb");
-    var yt = youtubeId(src);
+    var yt = youtubeId(src), dr = driveId(src);
+    var vid = null;                        /* hover preview video, made on first hover */
+    card.style.setProperty("--n", n || 0);
+
+    /* overlay: style tag and play button */
+    var cat = styleNames[card.getAttribute("data-cat")];
+    card.insertAdjacentHTML("beforeend",
+      (cat ? '<span class="work__tag">' + cat + "</span>" : "") +
+      '<span class="work__play" aria-hidden="true"></span>');
+
     if (thumb && yt) {
       thumb.classList.add("thumb--yt");
       thumb.style.background = "#111 url(https://img.youtube.com/vi/" + yt + "/hqdefault.jpg)";
-    } else if (thumb && driveId(src)) {
-      /* Google Drive: use Drive's own preview image as the thumbnail */
+    } else if (thumb && dr) {
       thumb.classList.add("thumb--yt");
-      thumb.style.background = "#111 url(https://drive.google.com/thumbnail?id=" + driveId(src) + "&sz=w800)";
-    } else if (thumb) {
-      /* local mp4: show the video itself as the thumbnail, play on hover */
-      var pv = document.createElement("video");
-      pv.className = "thumb";
-      pv.src = src + "#t=0.5";
-      pv.muted = true; pv.playsInline = true; pv.preload = "metadata"; pv.loop = true;
-      thumb.replaceWith(pv);
-      if (!reduce) {
-        card.addEventListener("mouseenter", function () { pv.play().catch(function () {}); });
-        card.addEventListener("mouseleave", function () { pv.pause(); });
-      }
+      thumb.style.background = "#111 url(https://drive.google.com/thumbnail?id=" + dr + "&sz=w1000)";
     }
-    card.addEventListener("click", function (e) { e.preventDefault(); openPlayer(src, tall, card); });
-  });
+
+    /* autoplay preview: the video plays muted on its own while the card is
+       on screen, and pauses when it scrolls away. Google Drive streams small
+       files directly; if Drive refuses (large files, or too many views), the
+       card just keeps its thumbnail. */
+    var previewSrc = card.getAttribute("data-preview") ||
+      (dr ? "https://drive.google.com/uc?export=download&id=" + dr : (!yt ? src : ""));
+    if (!reduce && previewSrc) {
+      card._preview = {
+        start: function () {
+          if (card._failed) return;
+          if (!vid) {
+            vid = document.createElement("video");
+            vid.className = "work__vid";
+            vid.muted = true; vid.loop = true; vid.playsInline = true; vid.autoplay = true; vid.preload = "auto";
+            vid.setAttribute("muted", ""); vid.setAttribute("playsinline", ""); vid.setAttribute("aria-hidden", "true");
+            vid.addEventListener("playing", function () { card.classList.add("is-playing"); });
+            vid.addEventListener("error", function () { card._failed = true; card.classList.remove("is-playing"); vid.remove(); vid = null; });
+            vid.src = previewSrc;
+            card.insertBefore(vid, card.firstChild.nextSibling);
+          }
+          var pr = vid.play(); if (pr && pr.catch) pr.catch(function () {});
+        },
+        stop: function () { if (vid) vid.pause(); }
+      };
+      if (previewIO) previewIO.observe(card); else card._preview.start();
+    }
+
+    card.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (vid) vid.pause();
+      openPlayer(src, tall, card);
+    });
+  }
+
+
+  /* ----- Build the video cards from videos.js -----
+     The list of videos lives in videos.js, so you can add or remove
+     videos there without touching this file or index.html. */
+  var grid = document.querySelector("#portfolio .grid");
+  var titles = { claymation: "Claymation Ad", lego: "Lego Ad", pixar: "Pixar-Style Ad", realistic: "Realistic AI Ad", singing: "Singing Ad" };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  if (grid && Array.isArray(window.VIDEOS)) {
+    grid.innerHTML = window.VIDEOS.map(function (v, n) {
+      var style = v.style || v.category || "";
+      return '<a class="work" href="#" aria-label="Play ' + esc(titles[style] || "video") + '" data-cat="' + esc(style) +
+        '" data-src="' + esc(v.link || "") + '"' + (v.vertical ? ' data-ratio="9:16"' : "") +
+        '><span class="thumb t' + (n % 6 + 1) + '"></span></a>';
+    }).join("");
+  }
+  document.querySelectorAll(".work[data-src]").forEach(function (c, i) { setupCard(c, i); });
+  applyFilter();
 
   document.getElementById("year").textContent = new Date().getFullYear();
 })();

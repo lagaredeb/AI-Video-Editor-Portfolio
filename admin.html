@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Video Manager · Outlast Creatives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+
+<header class="ad-top">
+  <div class="wrap ad-top__in">
+    <div>
+      <h1>Video Manager</h1>
+      <p class="ad-muted">Add, edit and remove the videos in your portfolio. No login needed.</p>
+    </div>
+    <a class="btn btn--ghost" href="index.html" target="_blank" rel="noopener">View portfolio</a>
+  </div>
+</header>
+
+<main class="wrap ad-main">
+
+  <section class="ad-panel ad-how">
+    <h2>How it works</h2>
+    <ol>
+      <li>Add, edit or remove videos below. Your changes are kept in this browser until you publish.</li>
+      <li>Click <b>Download videos.json</b>.</li>
+      <li>Replace the old <code>videos.json</code> in your Portfolio folder with the downloaded one.</li>
+      <li>Upload it to your website (VS Code: Commit, then Sync Changes; Netlify: drag the folder again).</li>
+    </ol>
+    <p class="ad-muted">Visitors who open this page can't change your site. Only the file you upload goes live.</p>
+  </section>
+
+  <section class="ad-panel">
+    <h2>Add a video</h2>
+    <form id="add-form" class="ad-form" novalidate>
+      <label class="ad-field ad-wide">
+        <span>Google Drive link</span>
+        <input id="f-link" type="url" placeholder="https://drive.google.com/file/d/.../view" required>
+      </label>
+      <label class="ad-field">
+        <span>Style</span>
+        <select id="f-cat"></select>
+      </label>
+      <label class="ad-field">
+        <span>Title (optional)</span>
+        <input id="f-title" type="text" placeholder="e.g. Coffee Claymation Ad">
+      </label>
+      <label class="ad-check">
+        <input id="f-vertical" type="checkbox"> Vertical (9:16)
+      </label>
+      <button class="btn btn--red" type="submit">Add video</button>
+    </form>
+    <p class="ad-status" id="add-status"></p>
+  </section>
+
+  <section class="ad-panel">
+    <div class="ad-head">
+      <h2>Your videos <span class="ad-count" id="count">0</span></h2>
+      <div class="ad-row">
+        <button class="btn btn--ghost" id="discard" type="button" hidden>Discard changes</button>
+        <button class="btn btn--red" id="download" type="button">Download videos.json</button>
+      </div>
+    </div>
+    <p class="ad-status" id="save-status"></p>
+    <ul class="ad-list" id="list"></ul>
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
